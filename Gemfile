@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'bundler', '~> 1.17.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.11.3'
@@ -48,3 +49,7 @@ end
 gem 'bigdecimal', '1.3.5'
 
 gem 'ffi', '< 1.17.0'
+
+gem 'bootstrap-sass', '~> 3.4.1'
+
+gem 'devise', '~> 4.8.1'

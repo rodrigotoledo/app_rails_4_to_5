@@ -30,6 +30,19 @@ And To Climb The Application Rode:
 ```bash
 docker compose -f docker-compose.development.yml up
 docker compose -f docker-compose.development.yml down
+docker compose -f docker-compose.development.yml run app bash
+```
+
+Maybe you need to run bash just to install bundler with the correct version, because rails 4 needs `1.17.3`, so enter in the bash of the application with
+
+```bash
+docker compose -f docker-compose.development.yml run app bash
+```
+
+And there install with:
+
+```bash
+bundle _1.17.3_ install
 ```
 
 Recompose the database:
@@ -68,10 +81,10 @@ docker compose -f docker-compose.development.yml run app bundle exec guard
 For Migrations (Remembering That You May Need To Run Both In Development And Test):
 
 ```bash
-docker compose -f docker-compose.development.yml run app rails db:migrate
+docker compose -f docker-compose.development.yml run app rake db:migrate
 ```
 
-## Security
+## Security (in future versions)
 
 It's a good practice to use annotaterb, brakeman and rubocop when you are developing. You can setup your own configuration using the example that exists in `.vscode.example` renaming to `.vscode`. Also running docker command to annotaterb, cover with rubocop and brakeman:
 

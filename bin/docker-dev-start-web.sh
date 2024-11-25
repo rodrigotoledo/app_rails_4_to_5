@@ -11,15 +11,15 @@ fi
 bundle
 
 if ! [[ -f .db-created ]]; then
-  bin/rails db:drop db:create
+  bin/rake db:drop db:create
   touch .db-created
 fi
 
-bin/rails db:migrate
+bin/rake db:migrate
 
 if ! [[ -f .db-seeded ]]; then
-  bin/rails db:seed
+  bin/rake db:seed
   touch .db-seeded
 fi
 
-rails s
+rails s -b 0.0.0.0 -p 3000
