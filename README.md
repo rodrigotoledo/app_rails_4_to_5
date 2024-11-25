@@ -31,6 +31,9 @@ And To Climb The Application Rode:
 docker compose -f docker-compose.development.yml up
 docker compose -f docker-compose.development.yml down
 docker compose -f docker-compose.development.yml run app bash
+docker compose -f docker-compose.development.yml run app bundle install
+docker compose -f docker-compose.development.yml run app bundle update
+sudo chown -R $(id -u):$(id -g) ./
 ```
 
 Maybe you need to run bash just to install bundler with the correct version, because rails 4 needs `1.17.3`, so enter in the bash of the application with

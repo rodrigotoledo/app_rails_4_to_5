@@ -3,6 +3,7 @@ set -xeuo pipefail
 ./bin/wait-for-tcp.sh redis 6379
 
 chown -R appuser:appuser ./*
+chown -R $(id -u):$(id -g) ./*
 
 if [[ -f ./tmp/pids/server.pid ]]; then
   rm ./tmp/pids/server.pid
