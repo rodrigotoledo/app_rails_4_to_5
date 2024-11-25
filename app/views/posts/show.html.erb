@@ -1,0 +1,21 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Post Details</h3>
+  </div>
+  <div class="panel-body">
+    <p>
+      <strong>Title:</strong>
+      <%= @post.title %>
+    </p>
+
+    <p>
+      <strong>Content:</strong>
+      <%= simple_format @post.content %>
+    </p>
+  </div>
+</div>
+
+<div class="text-center">
+  <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-warning" %>
+  <%= link_to 'Back', posts_path, class: "btn btn-default" %>
+</div>

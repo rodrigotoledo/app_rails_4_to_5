@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AppRails4To5</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="bg-light">
+
+  <!-- Navbar padrão do Bootstrap -->
+  <nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">AppRails4To5</a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%=link_to 'Home', root_path %></li>
+        <li><%=link_to 'Posts', posts_path %></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Conteúdo principal -->
+  <div class="container panel panel-default">
+    <div class="panel-body">
+      <%= render "shared/flash" %>
+      <%= yield %>
+    </div>
+  </div>
+
+  <!-- Rodapé -->
+  <footer class="text-center well">
+    &copy; <%= Time.now.year %> AppRails4To5. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
