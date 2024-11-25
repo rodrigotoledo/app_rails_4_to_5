@@ -1,0 +1,47 @@
+<h2 class="text-center">Sign Up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "form-horizontal" }) do |f| %>
+  <!-- Exibir erros -->
+  <%= render "shared/error_messages", resource: resource %>
+
+  <!-- Campo de Email -->
+  <div class="form-group">
+    <%= f.label :email, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Enter your email" %>
+    </div>
+  </div>
+
+  <!-- Campo de Senha -->
+  <div class="form-group">
+    <%= f.label :password, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+      <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "Enter your password" %>
+      <% if @minimum_password_length %>
+        <p class="help-block text-muted">
+          (<%= @minimum_password_length %> characters minimum)
+        </p>
+      <% end %>
+    </div>
+  </div>
+
+  <!-- Campo de Confirmação de Senha -->
+  <div class="form-group">
+    <%= f.label :password_confirmation, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "Confirm your password" %>
+    </div>
+  </div>
+
+  <!-- Botão de Envio -->
+  <div class="form-group">
+    <div class="col-sm-offset-3 col-sm-9">
+      <%= f.submit "Sign up", class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
+
+<!-- Links Adicionais -->
+<div class="text-center">
+  <%= render "devise/shared/links" %>
+</div>

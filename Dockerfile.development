@@ -36,7 +36,6 @@ WORKDIR /app
 
 # Copiar arquivos Gemfile e instalar as dependências
 COPY Gemfile* ./
-RUN gem uninstall -v '>= 2.0.0' bundler || true
 RUN gem install bundler -v 1.17.3
 RUN bundle _1.17.3_ lock --add-platform x86_64-linux
 RUN bundle _1.17.3_ install
